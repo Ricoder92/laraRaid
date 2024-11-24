@@ -128,6 +128,10 @@ public static function form(Form $form): Form
                 //
             ])
             ->actions([
+                Tables\Actions\Action::make('signups')
+                    ->label('View Signups') // Label für die Aktion
+                    ->icon('heroicon-o-user-group') // Optional: Ein Icon hinzufügen
+                    ->url(fn (Raid $record) => static::getUrl('signups', ['record' => $record->id])), // URL für die Signups-Seite
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
