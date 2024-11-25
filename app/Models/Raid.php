@@ -14,9 +14,14 @@ class Raid extends Model
         return $this->belongsToMany(DungeonBoss::class, 'raid_encounters');  // Angabe der Pivot-Tabelle mit Schwierigkeitsgrad
     }
 
+    public function encounters()
+    {
+        return $this->hasMany(RaidEncounter::class);
+    }
+
     public function dungeons()
     {
-    return $this->belongsToMany(Dungeon::class, 'raid_dungeons',);
+        return $this->belongsToMany(Dungeon::class, 'raid_dungeons',);
     }
 
 }

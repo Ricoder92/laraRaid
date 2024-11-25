@@ -316,6 +316,10 @@ class Character extends Model
         return $this->belongsToMany(CharacterGroup::class, 'character_groups_characters');
     }
 
+    public function raidSignups()
+    {
+        return $this->hasMany(RaidSignup::class);
+    }
 
 
 }
